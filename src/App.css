@@ -9,3 +9,11 @@
   width: 100%;
   margin-top: 100px;
 }
+
+.form {
+  padding-top: 20px;
+}
+
+.submitButton {
+  background-color: black;
+}
