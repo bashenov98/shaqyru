@@ -31,6 +31,8 @@ function App() {
   const [selectedValue, setSelectedValue] = useState({});
   const [inputText, setInputText] = useState('');
   const [mobile, setMobile] = useState('');
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -49,8 +51,9 @@ function App() {
     setMobile(event.target.value);
   };
 
-  const Submit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
 
@@ -67,6 +70,13 @@ function App() {
       }
     }
     )
+
+    if (response.status === 200 && response2.status === 200) {
+      setFormSuccess(true);
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
     console.log(response)
     console.log(response2)
   };
@@ -108,37 +118,54 @@ function App() {
 
       </div>
       <div className='btmPage'>
-        <img src={OyuBtmImg} className='oyuBtmImg' alt='oyu-ornek' />
-        <form onSubmit={(e) => Submit(e)}>
-          <h2 className='formHeader'>Тойға келетініңізді растауыңызды сұраймыз</h2>
-          <h3 className='formSubHeader'>Жұбайыңызбен келетін болсаңыз, екі есімді де көрсетіңіз</h3>
-          <div className='inputField'>
-            <input
-              placeholder="Аты-жөніңіз"
-              value={inputText}
-              onChange={handleChangeText}
-              name='name'
-            />
-          </div>
 
-          <div className='inputField'>
-            <input
-              placeholder="Телефон нөміріңіз"
-              value={mobile}
-              onChange={handleChangeMobile}
-              name='mobile'
-            />
-          </div>
+        {formSuccess ?
+          <div className='formSuccess'>
+            <img src={OyuBtmImg} className='oyuBtmImg' alt='oyu-ornek' style={{ paddingBottom: "200px" }} />
+            Жауап сақталды!
+          </div> :
+          <div>
+            <img src={OyuBtmImg} className='oyuBtmImg' alt='oyu-ornek' />
+            <form onSubmit={(e) => onSubmit(e)}>
+              <h2 className='formHeader'>Тойға келетініңізді растауыңызды сұраймыз</h2>
+              <h3 className='formSubHeader'>Жұбайыңызбен келетін болсаңыз, екі есімді де көрсетіңіз</h3>
+              <div className='inputField'>
+                <input
+                  placeholder="Аты-жөніңіз"
+                  value={inputText}
+                  onChange={handleChangeText}
+                  name='name'
+                />
+              </div>
 
-          <RadioGroup aria-labelledby="radio-group" name="Answer" value={selectedValue} onChange={handleChange}>
-            <FormControlLabel value="Әрине, келемін" control={<Radio sx={radioBtnProp} />} label="Әрине, келемін" />
-            <FormControlLabel value="Әлі белгісіз" control={<Radio sx={radioBtnProp} />} label="Әлі белгісіз" />
-            <FormControlLabel value="Өкінішке орай, келе алмаймын" control={<Radio sx={radioBtnProp} />} label="Өкінішке орай, келе алмаймын" />
-          </RadioGroup>
+              <div className='inputField'>
+                <input
+                  placeholder="Телефон нөміріңіз"
+                  value={mobile}
+                  onChange={handleChangeMobile}
+                  name='mobile'
+                />
+              </div>
 
-          <button type="submit" variant="contained">Жіберу</button>
-        </form>
+              <RadioGroup aria-labelledby="radio-group" name="Answer" value={selectedValue} onChange={handleChange}>
+                <FormControlLabel value="Әрине, келемін" control={<Radio sx={radioBtnProp} />} label="Әрине, келемін" />
+                <FormControlLabel value="Әлі белгісіз" control={<Radio sx={radioBtnProp} />} label="Әлі белгісіз" />
+                <FormControlLabel value="Өкінішке орай, келе алмаймын" control={<Radio sx={radioBtnProp} />} label="Өкінішке орай, келе алмаймын" />
+              </RadioGroup>
+
+              <div className='buttonContainer'>
+                {loading ?
+                  <div className='loader' /> :
+                  <button type="submit" variant="contained">Жіберу</button>
+                }
+
+              </div>
+
+            </form>
+          </div>}
+
       </div>
+
     </div>
   );
 }
