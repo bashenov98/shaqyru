@@ -154,7 +154,6 @@ input::placeholder {
   align-items: center;
   border-radius: 12px;
   border: 2px solid #FFFFFF;
-  opacity: 0px;
   height: 51px;
   background: #202020;
 }
