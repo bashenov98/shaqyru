@@ -158,9 +158,7 @@ function App() {
                   <div className='loader' /> :
                   <button type="submit" variant="contained">Жіберу</button>
                 }
-
               </div>
-
             </form>
           </div>}
 
