@@ -17,7 +17,7 @@ import OyuMid from 'assets/oyu-mid.svg'
 import MapImg from 'assets/map.svg';
 import OyuTopImg from 'assets/oyu-top-half.svg';
 import OyuBtmImg from 'assets/oyu-bottom-half.svg';
-import CoupleImg from 'assets/IMG_5898.JPG';
+import CoupleImg from 'assets/IMG_5793.JPG';
 
 function App() {
 

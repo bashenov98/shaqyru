@@ -27,9 +27,9 @@ h3 {
 }
 
 .mainSubtitle {
-  font-family: 'CustomFont', sans-serif;
+  font-family: 'SecondaryFont', sans-serif;
   letter-spacing: 0.3px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .topPage {
