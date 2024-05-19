@@ -105,7 +105,7 @@ function App() {
 
         <h2 style={{ marginTop: "40px" }}>Той салтанаты:</h2>
         <h3>Күні: 10/08/2024 </h3>
-        <h3 style={{ marginBottom: "40px" }}>Басталуы: 17:00</h3>
+        <h3 style={{ marginBottom: "40px" }}>Басталуы: 16:00</h3>
 
         <h2>Мекенжайымыз:</h2>
         <h3>Алматы қаласы,</h3>
