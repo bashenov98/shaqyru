@@ -112,8 +112,10 @@ function App() {
         <h3>Ремизовка, Арайлы көшесі, 16</h3>
         <h3 >“Eleven Hotel&Hall”,</h3>
         <h3 style={{ marginBottom: "40px" }}>Ballroom</h3>
-
-        <img src={MapImg} className='mapImg' alt='oyu-ornek' />
+        
+        <a href="https://2gis.kz/almaty/geo/70000001028581820" target="_blank" rel="noopener noreferrer">
+          <img src={MapImg} className='mapImg' alt='map-icon' />
+        </a>
         <img src={OyuTopImg} className='oyuTopImg' alt='oyu-ornek' />
 
       </div>
