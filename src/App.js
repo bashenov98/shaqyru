@@ -58,7 +58,7 @@ function App() {
     const formDatab = new FormData(formEle);
 
     const token = '7101981316:AAGrugzrt7e25mIkbzl_ee8ZO8INAFsrst0';
-    const text = (`${inputText}: ${selectedValue}`);
+    const text = (`${inputText}: ${selectedValue} `);
 
     setFormData({ Name: inputText, Mobile: '87719052133', Answer: selectedValue })
 
