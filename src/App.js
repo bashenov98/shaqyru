@@ -136,7 +136,7 @@ function App() {
                   placeholder="Аты-жөніңіз"
                   value={inputText}
                   onChange={handleChangeText}
-                  name='name'
+                  name='Name'
                 />
               </div>
 
@@ -145,7 +145,7 @@ function App() {
                   placeholder="Телефон нөміріңіз"
                   value={mobile}
                   onChange={handleChangeMobile}
-                  name='mobile'
+                  name='Mobile'
                 />
               </div>
 
